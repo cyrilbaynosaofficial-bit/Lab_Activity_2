@@ -1,8 +1,14 @@
-class vehicle {
+class Vehicle {
 
    String brand;
    String model;
    int year;
+   
+   Vehicle(String brand, String model, int year) {
+      this.brand = brand;
+      this.model = model;
+      this.year = year;
+   }
    
    void displayInfo() {
       System.out.println(brand);
@@ -20,7 +26,7 @@ class vehicle {
          if (age >= 25) {
           System.out.println("Its vintage.");
        } else {
-            System.out.println("Its not.");
+            System.out.println("Its not a vintage.");
          }
          
    }
