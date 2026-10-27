@@ -1,32 +1,49 @@
-class main {
+public class main {
+
+   public static void printAll(vehicle vehicle) {
+   vehicle.displayInfo();
+   vehicle.calculateAge();
+   vehicle.isVintage();
+   }
+
    public static void main(String[] args) {
-   
-      vehicle v1 = new vehicle();
-      v1.brand = "BMW";
-      v1.model = "BMW M4";
-      v1.year = 2014;
-      v1.displayInfo();
-      v1.calculateAge();
-      v1.isVintage();
       
+      System.out.println("**One Reference, Many Objects**\n");
+      vehicle wow = new car("BMW", "BMW M4", 2014, 2);
+      printAll(wow);
       System.out.println();
       
-      vehicle v2 = new vehicle();
-      v2.brand = "Lamborghini";
-      v2.model = "Countach";
-      v2.year = 1974;
-      v2.displayInfo();
-      v2.calculateAge();
-      v2.isVintage();  
-      
+      wow = new motorcycle("Kawasaki", "Ninja ZX-10R", 2004, "Manual");
+      printAll(wow);
       System.out.println();
       
-      vehicle v3 = new vehicle();
-      v3.brand = "Porsche";
-      v3.model = "911 GT3 (991)";
-      v3.year = 2013;
-      v3.displayInfo();
-      v3.calculateAge();
-      v3.isVintage();
+      wow = new truck("Ford", "F-150", 2026, 4);
+      printAll(wow);
+      System.out.println();
+      
+      System.out.println("**One Method, Different Types**\n");
+      car luxury = new car("Lamborghini", "Countach", 1974, 2);
+      printAll(luxury);
+      System.out.println();
+      motorcycle dirt = new motorcycle("Honda", "CRF450R", 2023, "Manual");
+      printAll(dirt);
+      System.out.println();
+      truck wheels = new truck("Toyota", "Hilux Conquest", 2024, 4);
+      printAll(wheels);
+      System.out.println();
+      
+      System.out.println("**Mixed Array**\n");
+      vehicle[] collection = {
+         
+         new car("Porsche", "911 GT3 (991)", 2013, 2),
+         new motorcycle("Ducati", "Panigale V4", 2024, "Manual"),
+         new truck("Ford", "F-150 Raptor", 2023, 4)
+      };
+      
+      for (vehicle coll : collection) {
+            printAll(coll);
+            System.out.println();
+        }   
+      
    }
 }  
