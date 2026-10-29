@@ -4,6 +4,10 @@ public class main {
    vehicle.displayInfo();
    vehicle.calculateAge();
    vehicle.isVintage();
+   vehicle.moveForward();
+   vehicle.moveLeft();
+   vehicle.moveBackward();
+   vehicle.moveRight();
    }
 
    public static void main(String[] args) {

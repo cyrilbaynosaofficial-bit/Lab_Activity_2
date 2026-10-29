@@ -1,4 +1,4 @@
-public class vehicle {
+public abstract class vehicle {
 
    private String brand;
    private String model;
@@ -9,6 +9,11 @@ public class vehicle {
       this.model = model;
       this.year= year;
    }
+   
+   abstract void moveForward();
+   abstract void moveLeft();
+   abstract void moveBackward();
+   abstract void moveRight();
    
    public void displayInfo() {
       System.out.println("Brand: " + brand + ", Model: " + model);
