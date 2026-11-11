@@ -14,6 +14,7 @@ public abstract class vehicle {
    abstract void moveLeft();
    abstract void moveBackward();
    abstract void moveRight();
+   void service() {}
    
    public void displayInfo() {
       System.out.println("Brand: " + brand + ", Model: " + model);

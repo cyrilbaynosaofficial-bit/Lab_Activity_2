@@ -1,5 +1,9 @@
 public class main {
 
+   public static void performService(serviceable item) {
+   item.service();
+   }
+      
    public static void printAll(vehicle vehicle) {
    vehicle.displayInfo();
    vehicle.calculateAge();
@@ -11,8 +15,36 @@ public class main {
    }
 
    public static void main(String[] args) {
+      //New act
+      System.out.println("**Serviceable**");
+      serviceable[] serviceableItems= {
+         new car("BMW", "BMW M4", 2014, 2),
+         new motorcycle("Kawasaki", "Ninja ZX-10R", 2004, "Manual"),
+         new truck("Ford", "F-150", 2026, 4),
+         new printer() 
+      };
+      for (serviceable item : serviceableItems) {
+            performService(item);
+        }
+      System.out.println();
       
+      System.out.println("**Vehicle Array**\n");
+      vehicle[] vehicleCollection = {
+         new car("Lamborghini", "Countach", 1974, 2),
+         new car("Porsche", "911 GT3 (991)", 2013, 2),
+         new motorcycle("Honda", "CRF450R", 2023, "Manual"),
+         new motorcycle("Ducati", "Panigale V4", 2024, "Manual"),
+         new truck("Toyota", "Hilux Conquest", 2024, 4),
+         new truck("Ford", "F-150 Raptor", 2023, 4)
+      };
+
+      for (vehicle coll : vehicleCollection) {
+         printAll(coll);
+         System.out.println();
+      }
+      //Old act
       System.out.println("**One Reference, Many Objects**\n");
+      
       vehicle wow = new car("BMW", "BMW M4", 2014, 2);
       printAll(wow);
       System.out.println();
@@ -24,8 +56,9 @@ public class main {
       wow = new truck("Ford", "F-150", 2026, 4);
       printAll(wow);
       System.out.println();
-      
+      //
       System.out.println("**One Method, Different Types**\n");
+      
       car luxury = new car("Lamborghini", "Countach", 1974, 2);
       printAll(luxury);
       System.out.println();
@@ -35,8 +68,9 @@ public class main {
       truck wheels = new truck("Toyota", "Hilux Conquest", 2024, 4);
       printAll(wheels);
       System.out.println();
-      
+      //
       System.out.println("**Mixed Array**\n");
+      
       vehicle[] collection = {
          
          new car("Porsche", "911 GT3 (991)", 2013, 2),
@@ -48,6 +82,5 @@ public class main {
             printAll(coll);
             System.out.println();
         }   
-      
    }
 }  
